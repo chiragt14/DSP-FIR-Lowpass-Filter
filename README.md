@@ -91,7 +91,7 @@ Waveform observed:
 The FIR LPF uses weighted coefficients:
 
 [
-y(n) = \sum h(k)x(n-k)
+y(n) = h(k)x(n-k)
 ]
 
 where:
@@ -123,8 +123,8 @@ Output:
 ### 1. Input Signal (2 MHz)
 
 Observed waveform shows smooth low-frequency sinusoidal behavior.
-(<img width="1271" height="478" alt="Screenshot 2026-06-18 101115" src="https://github.com/user-attachments/assets/58814785-1adf-45e2-9752-6f32da171e4d" />
-)
+<img width="1375" height="713" alt="Screenshot 2026-06-18 102608" src="https://github.com/user-attachments/assets/c6616696-3ff9-4283-ba1d-17e9fcc41410" />
+
 **Analysis:**
 
 * Stable periodic waveform
@@ -133,8 +133,8 @@ Observed waveform shows smooth low-frequency sinusoidal behavior.
 ---
 
 ### 2. Noise Signal (30 MHz)
-(<img width="1375" height="713" alt="Screenshot 2026-06-18 102608" src="https://github.com/user-attachments/assets/ccb03ec4-8b11-4bf5-a7f9-0b9571dd13a4" />
-)
+<img width="1375" height="713" alt="Screenshot 2026-06-18 102608" src="https://github.com/user-attachments/assets/ccb03ec4-8b11-4bf5-a7f9-0b9571dd13a4" />
+
 High-frequency oscillations are clearly visible.
 
 **Analysis:**

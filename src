@@ -1,1 +1,59 @@
+module fir_lpf(
+    input clk,
+    input rst,
+    input signed [15:0] x_in,
+    output reg signed [31:0] y_out
+);
 
+parameter signed h0 = 16'd2;
+parameter signed h1 = 16'd4;
+parameter signed h2 = 16'd8;
+parameter signed h3 = 16'd16;
+parameter signed h4 = 16'd32;
+parameter signed h5 = 16'd16;
+parameter signed h6 = 16'd8;
+parameter signed h7 = 16'd4;
+parameter signed h8 = 16'd2;
+
+reg signed [15:0] shift_reg [0:8];
+
+integer i;
+reg signed [31:0] sum;
+
+always @(posedge clk or posedge rst)
+begin
+    if(rst)
+    begin
+        for(i=0; i<9; i=i+1)
+            shift_reg[i] <= 0;
+        y_out <= 0;
+    end
+    else
+    begin
+        // Shift samples
+        shift_reg[8] <= shift_reg[7];
+        shift_reg[7] <= shift_reg[6];
+        shift_reg[6] <= shift_reg[5];
+        shift_reg[5] <= shift_reg[4];
+        shift_reg[4] <= shift_reg[3];
+        shift_reg[3] <= shift_reg[2];
+        shift_reg[2] <= shift_reg[1];
+        shift_reg[1] <= shift_reg[0];
+        shift_reg[0] <= x_in;
+
+        // FIR equation
+        sum = (shift_reg[0]*h0) +
+              (shift_reg[1]*h1) +
+              (shift_reg[2]*h2) +
+              (shift_reg[3]*h3) +
+              (shift_reg[4]*h4) +
+              (shift_reg[5]*h5) +
+              (shift_reg[6]*h6) +
+              (shift_reg[7]*h7) +
+              (shift_reg[8]*h8);
+
+        y_out <= sum;
+    end
+end
+
+endmodule

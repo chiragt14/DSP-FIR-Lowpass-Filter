@@ -123,7 +123,8 @@ Output:
 ### 1. Input Signal (2 MHz)
 
 Observed waveform shows smooth low-frequency sinusoidal behavior.
-<img width="1375" height="713" alt="Screenshot 2026-06-18 102608" src="https://github.com/user-attachments/assets/c6616696-3ff9-4283-ba1d-17e9fcc41410" />
+<img width="1565" height="896" alt="Screenshot 2026-06-18 102422" src="https://github.com/user-attachments/assets/5221c966-bfb0-4a96-81b0-6040360fd9a9" />
+
 
 **Analysis:**
 

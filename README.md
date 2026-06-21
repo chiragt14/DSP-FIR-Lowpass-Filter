@@ -37,15 +37,10 @@ This project implements a **Digital Signal Processing (DSP) FIR Low Pass Filter 
 FIR_LPF_Project/
 │── src/
 │   ├── fir.v              # FIR Filter top module
-│   ├── cordic.v           # CORDIC sine generator
-│   ├── signal_mixer.v     # Combines signals to create noisy input
 │
 │── tb/
 │   ├── fir_tb.v           # Testbench
 │
-│── sim/
-│   ├── waveform1.png      # Signal generation waveform
-│   ├── waveform2.png      # FIR output waveform
 │
 │── README.md
 ```
@@ -219,4 +214,3 @@ This project serves as a strong foundation for advanced FPGA-based DSP systems.
 
 ---
 
-Just paste this into your `README.md`. It’s structured well for GitHub and recruiter review.

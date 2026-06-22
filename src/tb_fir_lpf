@@ -1,0 +1,40 @@
+`timescale 1ns/1ps
+
+module tb_fir_lpf;
+
+reg clk;
+reg rst;
+reg signed [15:0] x_in;
+wire signed [31:0] y_out;
+
+fir_lpf uut (
+    .clk(clk),
+    .rst(rst),
+    .x_in(x_in),
+    .y_out(y_out)
+);
+
+always #5 clk = ~clk;
+
+integer n;
+
+initial
+begin
+    clk = 0;
+    rst = 1;
+    x_in = 0;
+
+    #20 rst = 0;
+
+    // Apply sample data
+    for(n=0; n<50; n=n+1)
+    begin
+        #10;
+        x_in = (n*10) + ((n%2)*100);  // low freq + high freq noise
+    end
+
+    #100;
+    $stop;
+end
+
+endmodule
